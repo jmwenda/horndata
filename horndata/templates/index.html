@@ -1,0 +1,117 @@
+{% extends "page_layout.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "Welcome!" %} - {{ block.super }} {% endblock %}
+{% block indexclass %} class="here" {% endblock %}
+
+{% block head %} 
+{% include "geonode/ext_header.html" %}
+{{ block.super }}
+<script type="text/javascript">
+Ext.onReady(function(){
+{% autoescape off %}
+
+  var exploreMapButton = new Ext.Button({
+     renderTo: 'explore_map', 
+     text: '{% trans "Explore Maps" %}',
+     handler: function(){ window.location = "{% url geonode.maps.views.maps_search_page %}"; }
+  });
+
+  var createMapButton = new Ext.Button({
+     renderTo: 'create_map', 
+     text: '{% trans "Create Map" %}',
+     handler: function(){ window.location = "{% url geonode.maps.views.newmap %}"; }
+  });
+
+  var submitForm = function() {
+      Ext.query('#data_block form')[0].submit();
+  };
+
+  var searchButton = new Ext.Button({renderTo: 'submit_search', text: '{% trans "Search" %}',
+                                     handler: submitForm});
+
+  var searchInput = new Ext.form.TextField({applyTo: 'search_query', width: 350});
+
+{% endautoescape %}
+});
+</script>
+{% endblock %}
+
+{% block content %} 
+<div id="index-left" class="twocol">
+<!-- TODO: i18n on the text here -->
+ <div class="block">
+   <h4>Battling Hunger in the Horn of Africa</h4>
+   <iframe width='500' height='500' frameBorder='0' src='http://a.tiles.mapbox.com/v2/mapbox.world-blank-light,usaid-horn.hoa-foodsecurity-sept-update-20110908_,hiu.lsib-dark-labelled/mm/zoompan,tooltips,legend,share,zoomwheel,zoombox,attribution.html#5/4.934587634208716/46.39524492187499'></iframe>  
+ </div>
+ <div class="block">
+   <h4>Zoellick/Horn of Africa</h4>
+   <iframe src="http://player.vimeo.com/video/9492277?title=0&amp;byline=0&amp;portrait=0&amp;color=99a0a1" width="500" height="369" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+   <p>President Robert B. Zoellick on July 26,2011 announced that the World Bank will provide $500 million in long-term assistance to drought victims in the Horn of Africa and an additional $12 million in immediate assistance for those hardest hit by the crisis.</p>
+ </div>
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="index-right" class="threecol">
+   <div class="block">  
+     <div id="about" class="section">
+        <div id="blockheader">
+        <div id="blocktitle">
+        <h2>About the Horn of Africa</h2>
+        </div><div id="sidelinks">
+         <a class="more-links">More &rsaquo; </a>
+        </div>
+        </div>
+        <p>The purpose of this site is to facilitate open access to geospatial information, data and knowledge sources, encouraging others to ... </p>
+     </div>
+     <div id="explore" class="section">
+        <div id="blockheader">
+        <div id="blocktitle">
+        <h2>Explore Maps</h2></div><div id="sidelinks">
+        <a class="more-links" href="/maps">Explore &rsaquo;</a></div></div>
+        <p>Explore pre-made maps,and those made by website users, on such thing as earthquake intensity,flood hazards,topography, road networks, current refugee shelters, health facilities and much more </p>
+     </div>
+
+     <div id="create" class="section">
+        <div id="blockheader"><div id="blocktitle">
+        <h2>Create Maps</h2></div><div id="sidelinks">
+        <a class="more-links"href="/maps/new" >Create &rsaquo;</a></div></div>
+        <p>Explore pre-made maps,and those made by website users, on such things as earthquake intensity, flood hazards,topography,road networks,current refugee shelters,health facilities and much more </p>
+     </div>
+
+     <div id="search" class="section">
+        <div id="blockheader"><div id="blocktitle">
+        <h2>Search the Database</h2></div><div id="sidelinks">
+        <a class="more-links" href="/data/search">Search &rsaquo;</a></div></div>
+        <p>Here you can upload,manage and browse geospatial data. Search for data that is valuable to you in a number of geospatial formats or upload your own data for use in creating your own map on this site. </p>
+
+
+
+   <!-- Data search text box and button -->
+    <form action="{% url search %}" method="POST">
+      {% csrf_token %}
+        <table>
+          <tr>
+            <td>
+              <input type="text" id="search_query" class="man" name="q" value=""/>
+            </td>
+            <td>
+              <div id="submit_search">
+              </div>
+          <!-- Upload data button (link?) -->
+   <!-- <a class="layer-upload-link1" href="{% url geonode.maps.views.upload_layer%}">{% trans "Upload data"  %} <div id="symbol">&rsaquo;</div></a>-->
+</td>          </tr>
+        </table>
+        <!-- <a href="{% url search %}">{% trans "Advanced Search" %}</a> -->
+    </form>
+    <!-- Links to specialized views of data -->
+    <!-- Upload data button (link?)-->
+<div id="upload"><a class="layer-upload-link1" href="{% url geonode.maps.views.upload_layer%}">{% trans "Upload data"  %}</a> <div id="symbol">&rsaquo;</div>
+</div>
+</div>
+  </div>
+</div>
+</div>
+{% endblock %}
