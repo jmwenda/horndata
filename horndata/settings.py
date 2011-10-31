@@ -11,6 +11,8 @@ SITEURL = "http://localhost:8000/"
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+#added this to have the GeoNode root setting here
+GEONODE_ROOT = os.path.dirname(geonode.__file__)
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -151,8 +153,9 @@ GEOSERVER_BASE_URL = "http://localhost:8001/geoserver/"
 GEOSERVER_TOKEN = open(os.path.join(PROJECT_ROOT,"..","..", "..","geoserver_token")).readline()[0:-1]
 
 # The username and password for a user that can add and edit layer details on GeoServer
-GEOSERVER_CREDENTIALS = "geoserver_admin", GEOSERVER_TOKEN
-
+#GEOSERVER_CREDENTIALS = "geoserver_admin", GEOSERVER_TOKEN
+#commented what was above inorder to use the SECRET KEY
+GEOSERVER_CREDENTIALS = "geoserver_admin", SECRET_KEY
 # The FULLY QUALIFIED url to the GeoNetwork instance for this GeoNode
 GEONETWORK_BASE_URL = "http://localhost:8001/geonetwork/"
 
