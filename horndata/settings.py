@@ -94,8 +94,13 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
 STATIC_URL = "/media/"
 
 # Additional directories which hold static files
+#STATICFILES_DIRS = [
+#    os.path.join(PROJECT_ROOT, "media"),
+#]
+#added this because of the change in the location of the media due to the debian installs
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, "media"),
+'/etc/geonode/media'
+os.path.join(GEONODE_ROOT,"media")
 ]
 
 GEONODE_UPLOAD_PATH = os.path.join(STATIC_URL, "upload/")
