@@ -147,8 +147,12 @@ ROOT_URLCONF = 'geonode.urls'
 
 # Note that Django automatically includes the "templates" dir in all the
 # INSTALLED_APPS, se there is no need to add maps/templates or admin/templates
+#TEMPLATE_DIRS = (
+#    os.path.join(PROJECT_ROOT,"templates"),    
+#)
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT,"templates"),    
+'/etc/geonode/templates',
+os.path.join(GEONODE_ROOT,'templates')
 )
 
 # The FULLY QUALIFIED url to the GeoServer instance for this GeoNode.
