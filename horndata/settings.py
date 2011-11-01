@@ -105,8 +105,9 @@ STATIC_URL = '/static/'
 #]
 #added this because of the change in the location of the media due to the debian installs
 STATICFILES_DIRS = [
-'/etc/geonode/media'
-os.path.join(GEONODE_ROOT,"media")
+'/etc/geonode/media',
+os.path.join(PROJECT_ROOT,"media"),
+os.path.join(GEONODE_ROOT,"media"),
 ]
 
 GEONODE_UPLOAD_PATH = os.path.join(STATIC_URL, "upload/")
@@ -163,7 +164,8 @@ ROOT_URLCONF = 'horndata.urls'
 #)
 TEMPLATE_DIRS = (
 '/etc/geonode/templates',
-os.path.join(GEONODE_ROOT,'templates')
+os.path.join(PROJECT_ROOT,'templates'),
+os.path.join(GEONODE_ROOT,'templates'),
 )
 
 # The FULLY QUALIFIED url to the GeoServer instance for this GeoNode.
