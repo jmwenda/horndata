@@ -144,9 +144,14 @@ MIDDLEWARE_CLASSES = (
 )
 
 # This isn't required for running the geonode site, but it when running sites that inherit the geonode.settings module.
+#LOCALE_PATHS = (
+#    os.path.join(PROJECT_ROOT, "locale"),
+#    os.path.join(PROJECT_ROOT, "maps", "locale"),
+#)
 LOCALE_PATHS = (
-    os.path.join(PROJECT_ROOT, "locale"),
-    os.path.join(PROJECT_ROOT, "maps", "locale"),
+     os.path.join(PROJECT_ROOT,"locale"),
+     os.path.join(GEONODE_ROOT,"locale"),
+     os.path.join(GEONODE_ROOT,'maps','locale'),
 )
 #also changed the root_urlconf
 ROOT_URLCONF = 'horndata.urls'
