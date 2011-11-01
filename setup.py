@@ -18,7 +18,7 @@ setup(
     ],
     license="GPL 3",
     keywords="horn of africa geonode django",
-    url='https://github.com/GFDRR/horndata',
+    url='https://github.com/jmwenda/horndata',
     packages=find_packages('.'),
     include_package_data=True,
     zip_safe=False,

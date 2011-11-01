@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: horndata
+Version: 0.1
+Summary: Code behind horn.rcmrd.org
+Home-page: https://github.com/GFDRR/horndata
+Author: Ariel Nunez, Jeffrey Johnson
+Author-email: ingenieroariel@gmail.com
+License: GPL 3
+Description: This is the repository for the GeoNode Instance for the horn. The repo contains the settings files, the templates in use and extras that are demmed suitable
+        
+Keywords: horn of africa geonode django
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: GeoNode
+Classifier: License :: OSI Approved :: GNU Library or General Public License (GPL)
