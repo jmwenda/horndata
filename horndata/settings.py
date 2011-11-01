@@ -148,8 +148,8 @@ LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, "locale"),
     os.path.join(PROJECT_ROOT, "maps", "locale"),
 )
-
-ROOT_URLCONF = 'geonode.urls'
+#also changed the root_urlconf
+ROOT_URLCONF = 'horndata.urls'
 
 # Note that Django automatically includes the "templates" dir in all the
 # INSTALLED_APPS, se there is no need to add maps/templates or admin/templates
