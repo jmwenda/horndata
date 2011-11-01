@@ -6,7 +6,7 @@ import os
 _ = lambda x: x
 
 DEBUG = True
-SITENAME = "GeoNode"
+SITENAME = "Open Data for the Horn"
 SITEURL = "http://localhost:8000/"
 TEMPLATE_DEBUG = DEBUG
 
