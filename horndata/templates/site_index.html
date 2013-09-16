@@ -20,20 +20,20 @@
 The purpose of this platform is to facilitate open access to geospatial information, data and knowledge sources, about the ongoing response to the drought in the Horn of Africa. This site is the result of collaboration between development agencies, humanitarian organizations, and technology developers and can be used by anyone to access or upload data and visualize the information contained within.</p>
       </div>
         <div class="span4">
-          <a href="#">Join Mail List <img src="{{ STATIC_URL }}img/mail.png" /></a>
-          <a href="#">Need Help <img src="{{ STATIC_URL }}img/q-mark.png" /></a>
+          <a href="mailto:geonode-users@googlegroups.com">Join Mail List <img src="{{ STATIC_URL }}img/mail.png" /></a>
+          <a href="{% url "help" %}">Need Help <img src="{{ STATIC_URL }}img/q-mark.png" /></a>
         </div>
         </div>
         <div class="span4 layer">
-          <div class="row"><img src="{{ STATIC_URL }}img/layers.png" /><h2><a href="#">Explore Layers</a></h2></div>
+          <div class="row"><img src="{{ STATIC_URL }}img/layers.png" /><h2><a href="{% url "layer_browse"%}">Explore Layers</a></h2></div>
           <p>This site lets you upload, manage, and browse geospatial data. Search for data that is valuable to you- in a number of geospatial formats- or upload your own data for use in creating your own map on this site.</p>
         </div>
         <div class="span4 maps">
-          <div class="row"><img src="{{ STATIC_URL }}img/maps.png" /><h2><a href="#">Explore Maps</h2></a></div>
+          <div class="row"><img src="{{ STATIC_URL }}img/maps.png" /><h2><a href="{% url "maps_browse" %}">Explore Maps</h2></a></div>
           <p>Explore pre-made maps, and those made by website users, on such things as rainfall variation, famine affected areas,flood hazards,topography, road networks, World Bank projects and much more </p>
        </div>
         <div class="span4 data">
-          <div class="row"><img src="{{ STATIC_URL }}img/upload.png" /><h2><a href="#">Upoad Data</a></h2></div>
+          <div class="row"><img src="{{ STATIC_URL }}img/upload.png" /><h2><a href="{% url "data_upload"%}">Upoad Data</a></h2></div>
           <p>Ready to share data you have, request for sign up credentials at the contact us page and we will send you credentials whith hich you could upload share some of your data. Help us share data with a community of DRM experts</p>
         </div>
 	  </div>
@@ -41,7 +41,7 @@ The purpose of this platform is to facilitate open access to geospatial informat
 
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span9 leftbar">
+        <div class="leftbar">
           <section class="widget list paginate-contents">
         <h2>{% trans "Latest Layers" %}</h2>
         <div class="paginate paginate-auto" id="search-content">
@@ -50,7 +50,7 @@ The purpose of this platform is to facilitate open access to geospatial informat
       </section>
         </div>
 
-        <div class="span4 rightbar">
+        <div class="rightbar">
             <h2>{% trans "Latest Maps" %}</h2>
             <section class="article-list">
                {% featured_maps as featured_maps %}

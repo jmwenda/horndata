@@ -305,7 +305,11 @@ border-radius: 0 0 4px 4px;
 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);}
 .leftbar .span12 a:hover{background:#c49b6d}
 .leftbar .span12 a img{float:left;}
-.rightbar{background:#FFF;margin: 10px 0 0 0;}
+.leftbar {
+float:left;
+width:690px;
+}
+.rightbar{background:#FFF;margin: 10px 0 0 0;float:right;width:345px; }
 .rightbar h2{color:#fff; background:#998675;margin: 0 0 10px 0;padding: 5px;}
 .rightbar .span12{width: 98%;margin: 0 2%;}
 .rightbar .span12 img{float:left;}
@@ -6276,6 +6280,26 @@ padding-top:20px;
 #functions  img {
     padding-top: 0px;
 }
+.list article {
+max-width: 690px;
+overflow: hidden;
+}
+.list article .thumb {
+display: block;
+float: left;
+height: 80px;
+margin: 15px 10px 10px 0;
+overflow: hidden;
+padding: 0;
+width: 80px;
+}
+
+.list article .thumb img {
+left: 0px;
+position: relative;
+margin: 0;
+padding: 0;
+}
 .list article .details {
     float: left;
     overflow: none;
@@ -6284,11 +6308,11 @@ padding-top:20px;
 .btn.btn-info {
     background: url("../img/lbg.png") repeat-x scroll left top transparent;
 }
-#contain-slider .tab-content {
+/*#contain-slider .tab-content {
     margin-left: 40px;
 	width:680px;
     padding-bottom: 40px;
-}
+}*/
 .btn.btn-primary {
     background: url("../img/lbg.png") repeat-x scroll left top transparent;
 }
