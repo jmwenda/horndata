@@ -13,6 +13,7 @@
       <link href="{{ STATIC_URL }}geonode/css/ext-compatibility.css" rel="stylesheet" />
       <link href="{{ STATIC_URL }}libs/datatables/css/datatables.css" rel="stylesheet" />
       <link href="{{ STATIC_URL }}libs/select2/select2.css" rel="stylesheet"/>
+      <link rel='shortcut icon' type='image/x-icon' href='{{ STATIC_URL}}img/favicon.ico' />
       {% block extra_head %}{% endblock %}
     {% endblock %}
     <!--[if lt IE 9]>
@@ -166,13 +167,15 @@
     {% endblock middle %}
 	{% block footer %}
       <footer>
-          <div class="span9">
+          <div class="pull-left footerlogos">
             <a href="http://www.gfdrr.org"><img src="{{ STATIC_URL }}img/gfdrr.png" /></a>
             <a href="http://www.nasa.gov"><img src="{{ STATIC_URL }}img/nasa.png" /></a> 
             <a href="http://www.rcmrd.org"><img src="{{ STATIC_URL }}img/rcmrd.png" /></a> 
             <a href="http://www.ithaca.edu"><img src="{{ STATIC_URL }}img/ithaka.png" /></a> 
             <a href="http://www.worldbank.org"><img src="{{ STATIC_URL }}img/w-b.png" /></a>
             <a href="http://www.wfp.org"><img src="{{ STATIC_URL }}img/wfp.png" /></a>
+            <a href="http://www.eu.org"><img src="{{ STATIC_URL }}img/ACP.png" /></a>
+            <a href="http://www.eu.org"><img src="{{ STATIC_URL }}img/EUtwo.png" /></a>
           </div>
           <div class="pull-right span3">
            <p>Open Data for the Horn &copy; 2013<br>

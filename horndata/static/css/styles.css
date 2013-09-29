@@ -324,7 +324,7 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);}
 .rightbar .span12 .download a:hover{background:#c49b6d}
 .rightbar .span12 .download a img{float:left;}
 .rightbar .span12 hr{float:left; width:100%; clear:both;}
-footer{background: #c69c6c url(../img/ftop.png) top repeat-x; padding:10px 0; float:left; color:#fff;width:1040px;}
+footer{background: #1d1d7b url(../img/ftop.png) top repeat-x; padding:10px 0; float:left; color:#fff;width:1040px;}
 footer .span8 a img{padding:10px 15px 0 0;}
 footer .span4{ text-align:right;}
 footer .span4 p{padding:0 10px;}
@@ -4431,7 +4431,7 @@ display:inline;
   *z-index: 2;
   margin-bottom: 20px;
   overflow: visible;
-  background:url(../img/bg-top.png) top repeat-x;
+  background:url(../img/bg-topblue.png) top repeat-x;
 }
 
 .navbar-inner {
@@ -4719,6 +4719,9 @@ color: #FFF
   margin-top: 8px;
 }
 
+.navbar .nav > li:hover {
+background-color:#777777;
+}
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   color: #333333;
@@ -4905,7 +4908,7 @@ color: #FFF
 
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #8a633c;
+  color: #fff;
 }
 
 .navbar-inverse .brand:hover,
@@ -6308,16 +6311,20 @@ padding: 0;
 .btn.btn-info {
     background: url("../img/lbg.png") repeat-x scroll left top transparent;
 }
-/*#contain-slider .tab-content {
+#contain-slider .tab-content {
     margin-left: 40px;
-	width:680px;
-    padding-bottom: 40px;
-}*/
+	width:570px;
+    /*padding-bottom: 40px;*/
+}
 .btn.btn-primary {
     background: url("../img/lbg.png") repeat-x scroll left top transparent;
 }
 .content-wrap {
     width: 1020px;
 
+}
+.footerlogos{
+width:780px;
+margin-left:20px;
 }
 
