@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load maps_tags %}
+{% load layers_tags %}
+{% load pagination_tags %}
+{% load staticfiles %}
+{% load url from future %}
+{% comment %}
+This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs. 
+{% endcomment %}
+  {% block hero %}
+
+
+    <div class="row very-top">
+      <div class="top">
+      <div class="span12">
+      <div class="span8">
+        <h1>Data for the Horn</h1>
+        <p>In order to build resilience to disasters in a changing climate, policy-makers and the public must have access to the accurate and up to date information. The Open Data for Resilience Initiative (OpenDRI) is a global partnership that seeks to build data sharing programs along with the capacity and tools to use data to make more informed decisions.
+
+The purpose of this platform is to facilitate open access to geospatial information, data and knowledge sources, about the ongoing response to the drought in the Horn of Africa. This site is the result of collaboration between development agencies, humanitarian organizations, and technology developers and can be used by anyone to access or upload data and visualize the information contained within.</p>
+      </div>
+        <div class="span4">
+          <a href="mailto:geonode-users@googlegroups.com">Join Mail List <img src="{{ STATIC_URL }}img/mail.png" /></a>
+          <a href="{% url "help" %}">Need Help <img src="{{ STATIC_URL }}img/q-mark.png" /></a>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="span12">
+        <div class="span4 layer">
+          <div class="row"><img src="{{ STATIC_URL }}img/layers.png" /><h2><a href="{% url "layer_browse"%}">Explore Layers</a></h2></div>
+          <p>This site lets you upload, manage, and browse geospatial data. Search for data that is valuable to you- in a number of geospatial formats- or upload your own data for use in creating your own map on this site.</p>
+        </div>
+        <div class="span4 maps">
+          <div class="row"><img src="{{ STATIC_URL }}img/maps.png" /><h2><a href="{% url "maps_browse" %}">Explore Maps</h2></a></div>
+          <p>Explore pre-made maps, and those made by website users, on such things as rainfall variation, famine affected areas,flood hazards,topography, road networks, World Bank projects and much more </p>
+       </div>
+        <div class="span4 data">
+          <div class="row"><img src="{{ STATIC_URL }}img/upload.png" /><h2><a href="{% url "data_upload"%}">Upoad Data</a></h2></div>
+          <p>Ready to share data you have, request for sign up credentials at the contact us page and we will send you credentials whith hich you could upload share some of your data. Help us share data with a community of DRM experts</p>
+        </div>
+        </div>
+	  </div>
+
+  {% endblock %}
